@@ -43,5 +43,5 @@ for i in range(n):
         s.append(A[i][j]+B[i][j])
     t.append(s)
 for u in t:
-    print(u)
+    print(*u)
 #######################################################################
