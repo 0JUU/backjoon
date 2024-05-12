@@ -23,5 +23,28 @@
 # 알고리즘 분류: 구현, 문자열
 ###############################################################################################
 # 구현코드:
+# ##FIRST CODE##
+# n=sorted(input().upper())
+# m={}
+# for i in n:
+#     if i not in m:
+#         m[i]=1
+#     else:
+#         m[i]+=1
+# o=[k for k,v in m.items() if v==max(m.values())]
+# if len(o)>1:
+#     print("?")
+# else:
+#     print(''.join(o))
 
+# ##SECOND CODE##
+from collections import Counter
+
+c=Counter(input().upper())
+m=max(c.values())
+k=[i for i,j in c.items() if j==m]
+if len(k)>1:
+    print("?")
+else:
+    print(k[0])
 ###############################################################################################
