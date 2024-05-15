@@ -19,21 +19,21 @@
 # 알고리즘 분류: 수학, 구현, 문자열
 ####################################################################
 # 구현코드:
-# def ctd(N,B):  # 10진법으로 변환하는 함수
-#     decimal=0  # decimal:10진법으로 변환된 수를 저장할 변수
-#     # B진법 수의 각 digit(자리수)에 대해 반복문 수행(첫번째 자리부터)
-#     for i,digit in enumerate(N[::-1]):
-#         if digit.isdigit():  # digit이 숫자인 경우
-#             # 10진법으로 변환한 후 합산
-#             decimal+=int(digit)*(B**i)
-#         else:  # digit이 알파벳인 경우
-#             # 그 digit에 해당하는 숫자로 변환한 후 합산
-#             # ord('A')==65 -> 10진수로 변환을 위해 55를 빼야 함(10진수 A: 10)
-#             decimal+=(ord(digit)-55)*(B**i)
-#     return decimal
-# N,B=input().split()
-# decimal=ctd(N,int(B))
-# print(decimal)
+def ctd(N,B):  # 10진법으로 변환하는 함수
+    decimal=0  # decimal:10진법으로 변환된 수를 저장할 변수
+    # B진법 수의 각 digit(자리수)에 대해 반복문 수행(첫번째 자리부터)
+    for i,digit in enumerate(N[::-1]):
+        if digit.isdigit():  # digit이 숫자인 경우
+            # 10진법으로 변환한 후 합산
+            decimal+=int(digit)*(B**i)
+        else:  # digit이 알파벳인 경우
+            # 그 digit에 해당하는 숫자로 변환한 후 합산
+            # ord('A')==65 -> 10진수로 변환을 위해 55를 빼야 함(10진수 A: 10)
+            decimal+=(ord(digit)-55)*(B**i)
+    return decimal
+N,B=input().split()
+decimal=ctd(N,int(B))
+print(decimal)
 ####################################################################
 # 누군가가 제출한 코드:
 # a,b=input().split()
